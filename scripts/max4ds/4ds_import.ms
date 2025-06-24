@@ -313,8 +313,8 @@ rollout Max4ds_4dsImport "" (   --module
             portalNode.name = "$portal" + (formattedPrint portalId format:".2u") + "__" + name
             
             local face = for v = 1 to portalnode.numVerts collect v
+            meshop.createPolygon portalNode face
             portalNode = convertToPoly portalNode
-            polyop.createPolygon portalNode face
 
             portalNode.wirecolor = (color 255 0 199)
             portalNode.parent = nodes[1]
